@@ -15,6 +15,7 @@ export default function Dock({ visible, onOpen, onClose, openApps }) {
         border border-white/20
         shadow-xl shadow-black/10
         transition-all duration-500 ease-out
+            z-[9999]
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
       `}
     >
