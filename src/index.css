@@ -1,0 +1,44 @@
+@import "tailwindcss";
+/* Default light mode styles */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode styles when <html class="dark"> is active */
+html.dark body {
+  background-color: rgb(17, 24, 39); /* Tailwind gray-900 */
+  color: white;
+}
+
+html.dark .dropdown {
+  background-color: #1f2937; /* Tailwind gray-800 */
+}
+html.dark .dropdown button {
+  color: white;
+}
+
+/* Default (light mode) styles */
+.menu-bar {
+  background-color: #1f2937; /* Tailwind gray-800 */
+}
+
+.menu-bar-text {
+  color: white;
+}
+
+/* Dark mode styles */
+html.dark .menu-bar {
+  background-color: white;
+}
+
+html.dark .menu-bar-text {
+  color: black;
+}
+
+.menu-bar {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.menu-bar-text {
+  transition: color 0.3s ease;
+}
