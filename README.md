@@ -42,7 +42,7 @@ This project is built with:
 
 You can view the live version here:
 
-[**🔗 View Portfolio on Vercel**](https://your-portfolio-url.vercel.app)
+[**🔗 View Portfolio on Vercel**](https://virain-bawa.vercel.app)
 
 _(Replace the link with your actual deployed URL)_
 
