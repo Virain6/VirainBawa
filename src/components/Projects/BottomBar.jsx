@@ -4,7 +4,7 @@ export default function ProjectBottomBar({ project }) {
   return (
     <div className="bg-neutral-900 text-white p-4 flex items-center justify-between gap-4">
       {/* Left */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 ">
         {project ? (
           <img
             src={project.image}
@@ -18,7 +18,7 @@ export default function ProjectBottomBar({ project }) {
           <h3 className="text-sm font-semibold">
             {project ? project.title : "Project"}
           </h3>
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-neutral-400 truncate w-40">
             {project ? project.description : "Select a project."}
           </p>
         </div>
@@ -26,6 +26,7 @@ export default function ProjectBottomBar({ project }) {
 
       {/* Center */}
       <div className="flex flex-col items-center w-3/5">
+        <span className="text-xs text-neutral-400 mb-1">Progress</span>
         <div className="flex items-center gap-2 w-full">
           <span className="text-xs text-neutral-400">
             {project ? project.progress : "00"}:00

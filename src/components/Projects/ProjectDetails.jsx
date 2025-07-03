@@ -23,6 +23,9 @@ export default function ProjectDetails({ project, onClose }) {
 
       {/* Main Content */}
       <div className="p-6 space-y-8">
+        <p className="text-sm text-neutral-300 leading-relaxed">
+          {project.description}
+        </p>
         {/* Hero Image */}
         <div className="rounded-lg overflow-hidden">
           <img
