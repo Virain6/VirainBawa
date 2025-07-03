@@ -8,15 +8,23 @@ import {
   User,
 } from "lucide-react";
 
-export default function ProjectTopBar({ onHome }) {
+export default function ProjectTopBar({
+  onHome,
+  onPrev,
+  onNext,
+  hasPrev,
+  hasNext,
+  search,
+  onSearchChange,
+}) {
   return (
     <header className="flex items-center justify-between px-4 py-2 bg-black/70 backdrop-blur-md">
       {/* Left: Nav Buttons */}
       <div className="flex items-center space-x-2">
-        <button className="p-1">
+        <button className="p-1" onClick={onPrev} disabled={!hasPrev}>
           <ChevronLeft className="w-5 h-5 text-gray-500 hover:text-white" />
         </button>
-        <button className="p-1">
+        <button className="p-1" onClick={onNext} disabled={!hasNext}>
           <ChevronRight className="w-5 h-5 text-gray-500 hover:text-white" />
         </button>
       </div>
@@ -44,6 +52,8 @@ export default function ProjectTopBar({ onHome }) {
           <input
             type="text"
             placeholder="What project do you want to see?"
+            value={search}
+            onChange={(e) => onSearchChange(e.target.value)}
             className="bg-transparent outline-none placeholder:text-neutral-400 w-full"
           />
         </div>

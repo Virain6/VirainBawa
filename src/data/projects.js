@@ -8,7 +8,7 @@ export const projectData = [
       "A player analytics platform built with a relational database backend and modern frontend.",
     about:
       "NBA Scouts is a professional-grade player analytics platform developed to showcase end-to-end database and frontend integration. This project was built using SQL and SQL Workbench for the backend, where we applied rigorous normalization techniques to design an efficient relational schema. Throughout the development process, we created complex SQL views and functions with multi-table joins to aggregate and present performance insights. Connecting this robust backend to a modern React interface required careful API design and planning, resulting in an intuitive dashboard that visualizes player metrics in real time. This project reflects a comprehensive journey—combining advanced database skills with frontend development to deliver a cohesive analytics experience",
-    image: "/images/nba-scouts.jpg",
+    image: "/images/projects/nba-scouts.png",
     progress: 100,
     tech: [
       "React",
@@ -40,7 +40,7 @@ One of the most valuable parts of this project was learning to build robust auth
 I designed APIs to be efficient even when working with a large volume of data, focusing on optimizing queries, minimizing redundant requests, and delivering low-latency responses. Throughout development, I learned best practices for structuring Express servers, designing secure routes, and maintaining a clear separation of concerns between client and server.
 
 This project deepened my skills in secure web application development, backend architecture, and cloud deployment while reinforcing the importance of planning for scalability and security from the start.`,
-    image: "/images/my-spots.jpg",
+    image: "/images/projects/my-spots.png",
     progress: 100,
     tech: [
       "React",
@@ -71,7 +71,7 @@ This project deepened my skills in secure web application development, backend a
     description:
       "A multi-user, multi-transaction restaurant ordering platform with robust concurrency controls.",
     about: `Guesteau is a distributed restaurant ordering platform built as a full-stack project in a team of five. The system was designed to replace traditional workflows with a modern web application combining a React frontend and a high-performance C++ server. My contributions included developing server concurrency using mutexes and multithreading, implementing role management (distinguishing regular users and administrators), and integrating support for secure user sessions. The backend adhered to ACID properties, leveraging YugabyteDB to maintain transactional integrity and data consistency under concurrent load. Throughout development, I worked closely with the team to design APIs, implement process synchronization strategies, and deliver a scalable system that handled real-time orders efficiently.`,
-    image: "/images/guesteau.jpg",
+    image: "/images/projects/guesteau.png",
     progress: 100,
     tech: [
       "React",
@@ -99,7 +99,7 @@ This project deepened my skills in secure web application development, backend a
     description:
       "Embedded C project to control throttle input on an electric bike using ARM microcontroller PWM.",
     about: `This project implemented an embedded control system for an electric bike using an ARM microcontroller. Working in a team, I led the development of the core firmware and was responsible for testing and verifying the hardware interfaces. I personally reviewed and validated all pin mappings against the hardware schematic to ensure reliable connections. The system was built entirely from scratch in C, utilizing PWM (Pulse Width Modulation) to precisely modulate the throttle signal based on analog sensor input. The project also involved configuring timers, handling interrupts, and calibrating duty cycles to achieve smooth throttle response. I extensively tested the firmware in hardware-in-the-loop conditions to confirm correct motor actuation and fault tolerance under varying load conditions.`,
-    image: "/images/electric-bike.jpg",
+    image: "/images/projects/electric-bike.png",
     progress: 100,
     tech: [
       "C",
@@ -126,7 +126,7 @@ This project deepened my skills in secure web application development, backend a
     description:
       "Early React project to track expenses and manage monthly budgets.",
     about: `This project was one of my first React applications, designed to help me better understand React fundamentals while building something personally useful. The app provides a clean interface to track expenses, categorize spending, and visualize budgeting over time. Developing this project gave me hands-on experience with React state management, component design, and data flow. I also implemented basic form validation and local storage persistence so budgets and transactions remain saved between sessions. This project laid the foundation for my confidence in modern frontend development and demonstrated how quickly React can be used to create practical tools.`,
-    image: "/images/budgeting-app.jpg",
+    image: "/images/projects/budgeting-app.png",
     progress: 100,
     tech: ["React", "JavaScript", "CSS", "HTML", "LocalStorage"],
     features: [
@@ -149,7 +149,7 @@ This project deepened my skills in secure web application development, backend a
 During development, I focused on modular design and clear separation of concerns—deploying the frontend independently on Vercel and ensuring robust API communication with the Convex back end. I implemented strategies such as rate limiting, CAPTCHA verification, and server-side validation to safeguard user data and prevent abuse. Additionally, I incorporated advanced features like Excel export for orders, bulk discount management, image upload handling (with plans to integrate Cloudinary or Convex for optimized media storage), and dynamic sorting by supplier, barcode, or pricing.
 
 This project showcases how I combine careful planning, modern frameworks, and a security-first mindset to build scalable, real-world applications.`,
-    image: "/images/building-blocks.jpg",
+    image: "/images/projects/building-blocks.png",
     progress: 55,
     tech: [
       "React",
@@ -183,7 +183,7 @@ This project showcases how I combine careful planning, modern frameworks, and a 
 I built this project using modern React and state management techniques to ensure a smooth, responsive experience. One of the core challenges—and ongoing areas of refinement—has been implementing live syncing across devices so sessions can seamlessly continue if you switch from desktop to mobile. I'm continuing to iterate on this feature to improve consistency and reliability.
 
 In addition to the standard Pomodoro intervals, I incorporated customization options for session lengths and break times, along with progress visualization to track your focus over time. This project reflects both my commitment to building tools I personally use and my focus on delivering polished, user-centered experiences.`,
-    image: "/images/pomodoro.jpg",
+    image: "/images/projects/pomodoro.png",
     progress: 60,
     tech: [
       "React",
@@ -251,7 +251,7 @@ MediCare also laid the groundwork for future AI features such as facial recognit
 I contributed extensively to integrating the Web Speech API for speech recognition and ensuring that the transcription was reliable and responsive. I also helped set up the React-based frontend, designed intuitive UI components, and implemented state management for streaming AI responses. Our backend was designed as a lightweight API layer that securely forwarded user prompts to OpenAI and returned results in near real time.
 
 The project was deployed on Vercel for streamlined continuous deployment, enabling us to iterate quickly and test updates with production-like performance. Throughout the project, we focused on clean architecture, clear separation of concerns, and optimizing prompt latency to create a seamless user experience.`,
-    image: "/images/ai-prompts.jpg", // Replace with your actual image path
+    image: "/images/projects/ai-prompts.png", // Replace with your actual image path
     progress: 75,
     tech: [
       "React",
@@ -280,23 +280,34 @@ export const playlistData = [
     title: "Featured Work",
     icon: User,
     description: "Some of my best projects.",
+    projects: ["nba-scouts", "my-spots", "guesteau"],
   },
   {
     id: "highlights-2024",
     title: "2024 Highlights",
     icon: User,
     description: "Recent work from this year.",
+    projects: ["building-blocks", "pomodoro-app"],
   },
   {
     id: "react-projects",
     title: "React Projects",
     icon: User,
     description: "Apps built in React.",
+    projects: [
+      "nba-scouts",
+      "my-spots",
+      "budgeting-app",
+      "building-blocks",
+      "pomodoro-app",
+      "ai-prompts",
+    ],
   },
   {
     id: "experiments",
     title: "Experiments",
     icon: User,
     description: "Prototypes and side projects.",
+    projects: ["electric-bike-arm"],
   },
 ];
