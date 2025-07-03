@@ -28,7 +28,7 @@ export default function WindowContainer({
   }
 
   // DESKTOP: Rnd draggable window with header
-  const defaultWidth = Math.min(window.innerWidth - 40, 800);
+  const defaultWidth = Math.min(window.innerWidth - 40, 1200);
   const defaultHeight = Math.min(window.innerHeight - 100, 650);
 
   return (

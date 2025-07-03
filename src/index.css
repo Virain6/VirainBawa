@@ -54,3 +54,24 @@ html.dark .menu-bar-text {
 .menu-bar-text {
   transition: color 0.3s ease;
 }
+
+/* Make scrollbar thin and dark */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.6);
+  border-radius: 4px;
+}
+
+/* Firefox support */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.6) transparent;
+}
