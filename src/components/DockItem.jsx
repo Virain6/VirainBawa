@@ -40,22 +40,23 @@ export default function DockItem({
           transition-all duration-300 ease-out
         "
       >
-        {/* Tooltip */}
+        {/* Tooltip (desktop only) */}
         <div
           className="
-            absolute -top-18
-            px-2 py-1
-            rounded
-            bg-black/80
-            text-xs text-white
-            opacity-0
-            translate-y-2
-            group-hover:opacity-100
-            group-hover:-translate-y-2
-            transition-all duration-300
-            pointer-events-none
-            whitespace-nowrap
-          "
+    hidden sm:block
+    absolute -top-18
+    px-2 py-1
+    rounded
+    bg-black/80
+    text-xs text-white
+    opacity-0
+    translate-y-2
+    group-hover:opacity-100
+    group-hover:-translate-y-2
+    transition-all duration-300
+    pointer-events-none
+    whitespace-nowrap
+  "
         >
           {name}
         </div>
@@ -72,6 +73,8 @@ export default function DockItem({
         >
           <Icon className="w-8 h-8 text-black" />
         </div>
+        {/* Label (mobile only) */}
+        <div className="mt-1 text-xs text-white sm:hidden">{name}</div>
 
         {/* Active dot */}
         {isActive && <div className="mt-1 w-2 h-2 rounded-full bg-gray-500" />}

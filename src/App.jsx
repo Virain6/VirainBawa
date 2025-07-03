@@ -1,75 +1,25 @@
-import React, { useState } from "react";
-import MenuBar from "./components/MenuBar";
-import StartupAnimation from "./components/StartupAnimation";
-import Dock from "./components/Dock";
-import BackgroundSketch from "./components/BackDrop";
-import { dockApps } from "./content";
+import React, { useEffect } from "react";
+import DesktopLayout from "./layouts/Desktop";
+import MobileLayout from "./layouts/Mobile";
+import { useIsMobile } from "./hooks/useIsMobile";
 
-function App() {
-  const [dockVisible, setDockVisible] = useState(false);
-  const [openApps, setOpenApps] = useState([]);
+export default function App() {
+  const isMobile = useIsMobile();
 
-  const handleOpen = (app) => {
-    const alreadyOpen = openApps.find((a) => a.name === app.name);
-
-    if (alreadyOpen) {
-      // Bring to front
-      setOpenApps([...openApps.filter((a) => a.name !== app.name), app]);
-    } else {
-      // Just add to the array
-      setOpenApps([...openApps, app]);
-    }
-  };
-
-  const handleClose = (name) => {
-    setOpenApps(openApps.filter((a) => a.name !== name));
-  };
+  // Set --vh for iOS
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    setVh();
+    window.addEventListener("resize", setVh);
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
 
   return (
-    <div className="relative min-h-screen bg-white text-black overflow-hidden">
-      <div
-        className="
-          fixed inset-0 z-0
-          bg-cover bg-center
-        "
-        style={{
-          backgroundImage: "url('/images/background.jpeg')",
-        }}
-      />
-      <div className="absolute inset-0 bg-black/60" />
-      <BackgroundSketch />
-      <div
-        className={`
-    fixed top-0 left-0 w-full z-50
-    transition-transform duration-700 ease-out
-    ${dockVisible ? "translate-y-0" : "-translate-y-full"}
-  `}
-      >
-        <MenuBar dockApps={dockApps} onOpen={handleOpen} />
-      </div>
-
-      {!dockVisible && (
-        <StartupAnimation onFinish={() => setDockVisible(true)} />
-      )}
-
-      <Dock
-        visible={dockVisible}
-        onOpen={handleOpen}
-        onClose={handleClose}
-        openApps={openApps}
-      />
-
-      {/* Render open windows */}
-      {openApps.map((app, index) => (
-        <app.component
-          key={app.name}
-          onClose={() => handleClose(app.name)}
-          onClick={() => handleOpen(app)}
-          index={index}
-        />
-      ))}
+    <div className="w-full" style={{ height: "calc(var(--vh) * 100)" }}>
+      {isMobile ? <MobileLayout /> : <DesktopLayout />}
     </div>
   );
 }
-
-export default App;

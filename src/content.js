@@ -11,6 +11,7 @@ import {
   Code,
   GraduationCap,
   Mail,
+  Home,
 } from "lucide-react";
 
 export const dockApps = [
@@ -53,7 +54,33 @@ export const dockApps = [
   },
 ];
 
-// src/content.js
+export const mobileDockApps = [
+  {
+    name: "Home",
+    icon: Home,
+    component: null, // No component, it just closes
+    hoverEffect: "scale-110",
+  },
+  {
+    name: "About",
+    icon: User,
+    component: AboutWindow,
+    hoverEffect: "scale-110 -rotate-3",
+  },
+  {
+    name: "Projects",
+    icon: FolderKanban,
+    component: ProjectsWindow,
+    hoverEffect: "scale-110 rotate-3",
+  },
+  {
+    name: "Contact",
+    icon: Mail,
+    component: ContactWindow,
+    hoverEffect: "scale-110",
+  },
+];
+
 export const aboutContent = {
   about: `I’m a passionate software engineering student at the University of Western Ontario, graduating in 2026. I love combining technology and creativity to solve real-world problems.`,
 

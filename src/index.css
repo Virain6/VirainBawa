@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap");
 @import "tailwindcss";
 
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* Default light mode styles */
 body {
   background-color: white;

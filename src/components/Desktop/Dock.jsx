@@ -1,6 +1,6 @@
 import React from "react";
-import DockItem from "./DockItem";
-import { dockApps } from "../content";
+import DockItem from "../DockItem";
+import { dockApps } from "../../content";
 
 export default function Dock({ visible, onOpen, onClose, openApps }) {
   return (

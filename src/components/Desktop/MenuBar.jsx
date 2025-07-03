@@ -20,7 +20,7 @@ export default function MenuBar({ dockApps, onOpen }) {
       <div className="menu-bar-text text-sm sm:text-base md:text-lg font-semibold !text-black">
         Virain Bawa
       </div>
-      <nav className="flex space-x-1 sm:space-x-2 md:space-x-3 text-xs sm:text-sm md:text-base">
+      <nav className="flex space-x-1 sm:space-x-1 md:space-x-2 text-xs sm:text-sm md:text-base">
         {dockApps.map((app) => (
           <button
             key={app.name}
