@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -18,6 +18,7 @@ export default function ProjectTopBar({
   onSearchChange,
   onToggleSidebar,
 }) {
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   return (
     <header className="flex items-center justify-between px-4 py-2 bg-black/70 backdrop-blur-md">
       {/* Left: Nav Buttons */}
@@ -52,7 +53,9 @@ export default function ProjectTopBar({
         <button className="ml-2 p-2 rounded-full bg-neutral-800 hover:bg-neutral-700">
           <Home className="w-5 h-5 text-white" onClick={onHome} />
         </button>
-        <div className="flex items-center bg-neutral-800 text-sm text-neutral-300 rounded-full px-3 py-2 w-56 md:w-80 max-w-full">
+
+        {/* Desktop search input */}
+        <div className="hidden md:flex items-center bg-neutral-800 text-sm text-neutral-300 rounded-full px-3 py-2 w-80 max-w-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -75,17 +78,78 @@ export default function ProjectTopBar({
             className="bg-transparent outline-none placeholder:text-neutral-400 w-full"
           />
         </div>
+
+        {/* Mobile search toggle */}
+        <div className="flex md:hidden items-center">
+          {mobileSearchOpen ? (
+            <div className="flex items-center bg-neutral-800 text-sm text-neutral-300 rounded-full px-3 py-2 w-48 max-w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-4 h-4 mr-2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-4.35-4.35M5 11a6 6 0 1112 0 6 6 0 01-12 0z"
+                />
+              </svg>
+              <input
+                type="text"
+                autoFocus
+                placeholder="Search..."
+                value={search}
+                onChange={(e) => onSearchChange(e.target.value)}
+                className="bg-transparent outline-none placeholder:text-neutral-400 w-full"
+              />
+              <button
+                onClick={() => {
+                  setMobileSearchOpen(false);
+                  onSearchChange(""); // optional: clear search
+                }}
+                className="ml-2 text-neutral-400 hover:text-white"
+              >
+                ✕
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => setMobileSearchOpen(true)}
+              className="p-2 rounded-full bg-neutral-800 hover:bg-neutral-700"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-5 h-5 text-white"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-4.35-4.35M5 11a6 6 0 1112 0 6 6 0 01-12 0z"
+                />
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Right: Icons */}
-      <div className="flex items-center space-x-4">
-        <button>
-          <Bell className="w-5 h-5 text-white" />
-        </button>
-        <button className="p-2 rounded-full bg-neutral-700 hover:bg-neutral-600">
-          <User size={18} />
-        </button>
-      </div>
+      {mobileSearchOpen ? null : (
+        <div className="flex items-center space-x-4">
+          <button>
+            <Bell className="w-5 h-5 text-white" />
+          </button>
+          <button className="p-2 rounded-full bg-neutral-700 hover:bg-neutral-600">
+            <User size={18} />
+          </button>
+        </div>
+      )}
     </header>
   );
 }
