@@ -22,12 +22,13 @@ export default function MobileHomeGrid({ onOpen }) {
             className="
               flex items-center justify-center
               h-16 w-16
-              rounded-xl bg-white
+              rounded-xl bg-white/20
               shadow
               transition
+              backdrop-blur-md
             "
           >
-            <app.icon className="w-8 h-8 text-black" />
+            <app.icon className="w-8 h-8 text-white" />
           </div>
 
           {/* App name */}
