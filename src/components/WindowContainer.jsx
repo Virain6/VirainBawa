@@ -10,6 +10,8 @@ export default function WindowContainer({
   onClick,
   index,
   children,
+  width,
+  height,
 }) {
   const isMobile = useIsMobile();
 
@@ -28,19 +30,22 @@ export default function WindowContainer({
   }
 
   // DESKTOP: Rnd draggable window with header
-  const defaultWidth = Math.min(window.innerWidth - 40, 1200);
-  const defaultHeight = Math.min(window.innerHeight - 100, 650);
+  const fallbackWidth = Math.min(window.innerWidth - 40, 1200);
+  const fallbackHeight = Math.min(window.innerHeight - 100, 650);
+
+  const finalWidth = width || fallbackWidth;
+  const finalHeight = height || fallbackHeight;
 
   return (
     <Rnd
       default={{
-        x: Math.max((window.innerWidth - defaultWidth) / 2, 0),
-        y: Math.max((window.innerHeight - defaultHeight) / 2, 0),
-        width: defaultWidth,
-        height: defaultHeight,
+        x: Math.max((window.innerWidth - finalWidth) / 2, 0),
+        y: Math.max((window.innerHeight - finalHeight) / 2, 0),
+        width: finalWidth,
+        height: finalHeight,
       }}
-      minWidth={400}
-      minHeight={500}
+      minWidth={width || 400}
+      minHeight={height || 500}
       bounds="window"
       dragHandleClassName="window-drag-handle"
       className="z-50"

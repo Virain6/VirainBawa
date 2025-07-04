@@ -82,11 +82,16 @@ export const mobileDockApps = [
 ];
 
 export const aboutContent = {
-  about: `I’m a passionate software engineering student at the University of Western Ontario, graduating in 2026. I love combining technology and creativity to solve real-world problems.`,
-
-  experience: `I’ve worked as CIO and Developer at Symptom Stream, building AI-driven tools for hospitals. As a Full Stack Developer at KeyStone, I designed a web app to manage and sell over 1,000 products. Previously, at HTS Engineering, I led sales efforts and collaborated closely with clients to deliver custom solutions.`,
-
-  projects: `Some of my notable projects include My Spots, a real-time collaborative list app; NBA Scouts, an analytics platform to track player performance; and a healthcare data collection app leveraging AI-powered facial and speech recognition in a Kubernetes environment.`,
-
-  skills: `I’m proficient in JavaScript, TypeScript, Java, Python, SQL, and C++, and I enjoy working with React, Next.js, Node.js, Express, Tailwind CSS, Convex, Firebase, and MongoDB.`,
+  name: "Virain Bawa",
+  titles: [
+    "Software Engineering Student",
+    "Full-Stack Developer",
+    "Problem Solver",
+  ],
+  location: "Brampton Ontario, Canada",
+  phone: "(416) 708 8472",
+  email: "bawavirain@gmail.com",
+  resume: "/files/virain_resume.pdf",
+  linkedin: "https://www.linkedin.com/in/yourprofile",
+  github: "https://github.com/Virain6",
 };
