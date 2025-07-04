@@ -16,11 +16,29 @@ export default function ProjectTopBar({
   hasNext,
   search,
   onSearchChange,
+  onToggleSidebar,
 }) {
   return (
     <header className="flex items-center justify-between px-4 py-2 bg-black/70 backdrop-blur-md">
       {/* Left: Nav Buttons */}
       <div className="flex items-center space-x-2">
+        <button className="p-1 md:hidden" onClick={onToggleSidebar}>
+          {/* Hamburger Icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
         <button className="p-1" onClick={onPrev} disabled={!hasPrev}>
           <ChevronLeft className="w-5 h-5 text-gray-500 hover:text-white" />
         </button>
@@ -34,7 +52,7 @@ export default function ProjectTopBar({
         <button className="ml-2 p-2 rounded-full bg-neutral-800 hover:bg-neutral-700">
           <Home className="w-5 h-5 text-white" onClick={onHome} />
         </button>
-        <div className="flex items-center bg-neutral-800 text-sm text-neutral-300 rounded-full px-3 py-2 w-80 max-w-full">
+        <div className="flex items-center bg-neutral-800 text-sm text-neutral-300 rounded-full px-3 py-2 w-56 md:w-80 max-w-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

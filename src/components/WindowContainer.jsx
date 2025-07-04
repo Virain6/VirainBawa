@@ -19,7 +19,7 @@ export default function WindowContainer({
       <div
         className="
           fixed inset-0 z-50 bg-white dark:bg-neutral-900
-          flex flex-col overflow-auto
+          flex flex-col overflow-auto pb-30
         "
       >
         {children}

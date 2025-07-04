@@ -13,14 +13,14 @@ export default function Sidebar({ onSelectPlaylist }) {
             key={playlist.id}
             className="
              hover:bg-neutral-700
-             rounded cursor-pointer transition flex gap-x-2
+             rounded cursor-pointer transition flex gap-x-2 pt-2 px-2 
             "
             onClick={() => onSelectPlaylist(playlist)}
           >
             <div className="rounded bg-neutral-200 p-2 mb-2 w-10 h-10 inline-flex items-center justify-center">
               <playlist.icon className="w-5 h-5 mb-1 text-neutral-900" />
             </div>
-            <div>
+            <div className="w-0 flex-1">
               <h3 className="text-sm font-semibold truncate">
                 {playlist.title}
               </h3>
