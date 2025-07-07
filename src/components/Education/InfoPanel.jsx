@@ -15,7 +15,7 @@ const iconMap = {
   Briefcase: Briefcase,
 };
 
-export default function InfoPanel({ step, onNext, onPrev, isFirst, isLast }) {
+export default function InfoPanel({ step, onNext, onPrev }) {
   const IconComponent = iconMap[step.icon] || GraduationCap;
 
   return (
@@ -48,7 +48,6 @@ export default function InfoPanel({ step, onNext, onPrev, isFirst, isLast }) {
       <div className="flex justify-between">
         <button
           onClick={onPrev}
-          disabled={isFirst}
           className="
             p-2 rounded-full hover:bg-[#3a3a3c] bg-[#505055]
             disabled:opacity-40 disabled:cursor-not-allowed
@@ -59,7 +58,6 @@ export default function InfoPanel({ step, onNext, onPrev, isFirst, isLast }) {
         </button>
         <button
           onClick={onNext}
-          disabled={isLast}
           className="
             p-2 rounded-full hover:bg-[#3a3a3c] bg-[#505055]
             disabled:opacity-40 disabled:cursor-not-allowed

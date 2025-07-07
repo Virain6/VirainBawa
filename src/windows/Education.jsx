@@ -9,12 +9,14 @@ export default function EducationWindow({ onClose, onClick, index }) {
 
   const handleNext = () => {
     setActiveIndex((prev) =>
-      prev < educationData.length - 1 ? prev + 1 : prev
+      prev === educationData.length - 1 ? 0 : prev + 1
     );
   };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    setActiveIndex((prev) =>
+      prev === 0 ? educationData.length - 1 : prev - 1
+    );
   };
 
   const handleMarkerClick = (index) => {
@@ -39,8 +41,6 @@ export default function EducationWindow({ onClose, onClick, index }) {
           step={educationData[activeIndex]}
           onNext={handleNext}
           onPrev={handlePrev}
-          isFirst={activeIndex === 0}
-          isLast={activeIndex === educationData.length - 1}
         />
       </div>
     </WindowContainer>
