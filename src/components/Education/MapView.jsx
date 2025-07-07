@@ -35,6 +35,7 @@ function MapUpdater({ center }) {
 export default function MapView({ steps, activeIndex, onMarkerClick }) {
   const activeStep = steps[activeIndex];
   const [activeLayer, setActiveLayer] = useState("Dark");
+  const [layerMenuOpen, setLayerMenuOpen] = useState(false);
 
   const iconGreen = new L.Icon({
     iconUrl:
@@ -137,29 +138,42 @@ export default function MapView({ steps, activeIndex, onMarkerClick }) {
       <div className="absolute bottom-2 left-2 z-[1000]">
         <div className="relative group">
           {/* The button */}
-          <button className="p-2 bg-[#2c2c2e]/60 backdrop-blur-sm rounded shadow">
+          <button
+            onClick={() => setLayerMenuOpen((prev) => !prev)}
+            className="p-2 bg-[#2c2c2e]/60 backdrop-blur-sm rounded shadow"
+          >
             <Layers className="w-10 h-10 text-gray-300" />
           </button>
 
           {/* The menu (shown on hover) */}
-          <div className="hidden group-hover:flex group-focus-within:flex absolute bottom-full mb-2 flex-col bg-[#2c2c2e]/60 backdrop-blur-sm rounded shadow p-2 space-y-1">
-            <button
-              onClick={() => setActiveLayer("Streets")}
-              className={`px-3 py-1 text-sm rounded text-white ${
-                activeLayer === "Streets" ? "bg-gray-700" : "hover:bg-gray-800"
-              }`}
-            >
-              Streets
-            </button>
-            <button
-              onClick={() => setActiveLayer("Dark")}
-              className={`px-3 py-1 text-sm text-white rounded ${
-                activeLayer === "Dark" ? "bg-gray-700" : "hover:bg-gray-800"
-              }`}
-            >
-              Dark
-            </button>
-          </div>
+          {layerMenuOpen && (
+            <div className="absolute bottom-full mb-2 flex flex-col bg-[#2c2c2e]/60 backdrop-blur-sm rounded shadow p-2 space-y-1">
+              <button
+                onClick={() => {
+                  setActiveLayer("Streets");
+                  setLayerMenuOpen(false);
+                }}
+                className={`px-3 py-1 text-sm rounded text-white ${
+                  activeLayer === "Streets"
+                    ? "bg-gray-700"
+                    : "hover:bg-gray-800"
+                }`}
+              >
+                Streets
+              </button>
+              <button
+                onClick={() => {
+                  setActiveLayer("Dark");
+                  setLayerMenuOpen(false);
+                }}
+                className={`px-3 py-1 text-sm text-white rounded ${
+                  activeLayer === "Dark" ? "bg-gray-700" : "hover:bg-gray-800"
+                }`}
+              >
+                Dark
+              </button>
+            </div>
+          )}
         </div>
       </div>
       <div
