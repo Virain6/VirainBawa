@@ -66,6 +66,12 @@ export default function DesktopLayout() {
           onClose={() => handleClose(app.name)}
           onClick={() => handleOpen(app)}
           index={index}
+          openWindow={(newComponent) =>
+            handleOpen({
+              name: `window-${Date.now()}`, // generate a unique name
+              component: newComponent,
+            })
+          }
         />
       ))}
     </div>

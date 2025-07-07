@@ -87,18 +87,3 @@ export const mobileDockApps = [
     hoverEffect: "scale-110",
   },
 ];
-
-export const aboutContent = {
-  name: "Virain Bawa",
-  titles: [
-    "Software Engineering Student",
-    "Full-Stack Developer",
-    "Problem Solver",
-  ],
-  location: "Ontario, Canada",
-  phone: "(416) 708 8472",
-  email: "bawavirain@gmail.com",
-  resume: "/files/virain_resume.pdf",
-  linkedin: "https://www.linkedin.com/in/yourprofile",
-  github: "https://github.com/Virain6",
-};

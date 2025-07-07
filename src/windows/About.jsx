@@ -1,10 +1,11 @@
 import React from "react";
 import WindowContainer from "../components/WindowContainer";
-import { aboutContent } from "../content";
+import { aboutContent } from "../data/about";
 import { Typewriter } from "react-simple-typewriter";
 import { User, FileText, Linkedin, Github } from "lucide-react";
+import PdfPreviewWindow from "./PdfPreview"; // Adjust the path if needed
 
-export default function AboutWindow({ onClose, onClick, index }) {
+export default function AboutWindow({ onClose, onClick, index, openWindow }) {
   return (
     <WindowContainer
       title="About Me"
@@ -43,14 +44,20 @@ export default function AboutWindow({ onClose, onClick, index }) {
 
         {/* Circular Icon Buttons */}
         <div className="flex space-x-4">
-          <a
-            href={aboutContent.resume}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() =>
+              openWindow((props) => (
+                <PdfPreviewWindow
+                  {...props}
+                  file={aboutContent.resume}
+                  fileName="Virain Bawa"
+                />
+              ))
+            }
             className="p-3 bg-neutral-800 hover:bg-neutral-700 rounded-full transition"
           >
             <FileText className="w-5 h-5 text-white" />
-          </a>
+          </button>
           <a
             href={aboutContent.linkedin}
             target="_blank"
