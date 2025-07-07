@@ -1,4 +1,5 @@
 import React from "react";
+import { X, Plus } from "lucide-react";
 
 export default function WindowHeader({ title, onClose, onMaximize }) {
   return (
@@ -25,13 +26,10 @@ export default function WindowHeader({ title, onClose, onMaximize }) {
             group
           "
         >
-          <span
-            className="
-              text-black text-[10px] leading-none opacity-0 group-hover:opacity-100 transition-opacity
-            "
-          >
-            ×
-          </span>
+          <X
+            className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity"
+            strokeWidth={3}
+          />
         </button>
         <button
           onClick={(e) => {
@@ -39,18 +37,15 @@ export default function WindowHeader({ title, onClose, onMaximize }) {
             onMaximize();
           }}
           className="
-            relative w-3.5 h-3.5 rounded-full bg-green-400 hover:bg-green-500
+            relative w-3.5 h-3.5 rounded-full bg-green-500 hover:bg-green-500
             flex items-center justify-center
             group
           "
         >
-          <span
-            className="
-              text-black text-[10px] leading-none opacity-0 group-hover:opacity-100 transition-opacity
-            "
-          >
-            ☐
-          </span>
+          <Plus
+            className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity"
+            strokeWidth={3}
+          />
         </button>
       </div>
       <h2 className="text-xs font-semibold text-white">{title}</h2>
