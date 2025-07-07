@@ -3,6 +3,7 @@ import React from "react";
 import { Rnd } from "react-rnd";
 import WindowHeader from "./Desktop/WindowHeader";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useRef } from "react";
 
 export default function WindowContainer({
   title,
@@ -14,6 +15,7 @@ export default function WindowContainer({
   height,
 }) {
   const isMobile = useIsMobile();
+  const rndRef = useRef();
 
   if (isMobile) {
     // FULLSCREEN on mobile, NO HEADER
@@ -36,8 +38,19 @@ export default function WindowContainer({
   const finalWidth = width || fallbackWidth;
   const finalHeight = height || fallbackHeight;
 
+  const handleMaximize = () => {
+    if (rndRef.current) {
+      rndRef.current.updatePosition({ x: 0, y: 0 });
+      rndRef.current.updateSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+  };
+
   return (
     <Rnd
+      ref={rndRef}
       default={{
         x: Math.max((window.innerWidth - finalWidth) / 2, 0),
         y: Math.max((window.innerHeight - finalHeight) / 2, 0),
@@ -55,7 +68,11 @@ export default function WindowContainer({
         className="flex flex-col h-full rounded-lg shadow-2xl overflow-hidden"
         onMouseDown={onClick}
       >
-        <WindowHeader title={title} onClose={onClose} />
+        <WindowHeader
+          title={title}
+          onClose={onClose}
+          onMaximize={handleMaximize}
+        />
         <div className="flex-1 overflow-auto">{children}</div>
       </div>
     </Rnd>

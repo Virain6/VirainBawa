@@ -28,9 +28,9 @@ export default function AboutWindow({ onClose, onClick, index }) {
             loop={0}
             cursor
             cursorStyle="|"
-            typeSpeed={120}
-            deleteSpeed={80}
-            delaySpeed={500}
+            typeSpeed={50}
+            deleteSpeed={40}
+            delaySpeed={1000}
           />
         </p>
 

@@ -16,6 +16,7 @@
     "p5": "^2.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
     "react-parallax-tilt": "^1.7.299",
     "react-rnd": "^10.5.2",
     "react-simple-typewriter": "^5.0.1",

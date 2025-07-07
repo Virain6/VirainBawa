@@ -54,6 +54,8 @@ export default function ProjectsWindow({ onClose, onClick, index }) {
       onClose={onClose}
       onClick={onClick}
       index={index}
+      width={1200}
+      height={600}
     >
       <div className="relative flex flex-col h-full bg-black text-white">
         <TopBar
