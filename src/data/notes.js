@@ -17,7 +17,7 @@ export const notesData = [
     content: `
 # Lyrics
 
-I'm super stressed
+Shout out my label thats me.
     `,
     favorite: false,
   },
