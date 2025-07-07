@@ -140,7 +140,7 @@ export default function MapView({ steps, activeIndex, onMarkerClick }) {
           {/* The button */}
           <button
             onClick={() => setLayerMenuOpen((prev) => !prev)}
-            className="p-2 bg-[#2c2c2e]/60 backdrop-blur-sm rounded shadow"
+            className="p-2 bg-[#2c2c2e]/100 backdrop-blur-sm rounded shadow"
           >
             <Layers className="w-10 h-10 text-gray-300" />
           </button>
