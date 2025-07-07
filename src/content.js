@@ -4,6 +4,7 @@ import AboutWindow from "./windows/About";
 import ContactWindow from "./windows/Contact";
 import LanguagesWindow from "./windows/Languages";
 import EducationWindow from "./windows/Education";
+import ExperienceWindow from "./windows/Experience";
 import {
   User,
   FolderKanban,
@@ -12,6 +13,7 @@ import {
   GraduationCap,
   Mail,
   Home,
+  BriefcaseBusiness,
 } from "lucide-react";
 
 export const dockApps = [
@@ -28,16 +30,16 @@ export const dockApps = [
     hoverEffect: "scale-110 rotate-3",
   },
   {
-    name: "Blog",
-    icon: BookOpen,
-    component: BlogWindow,
-    hoverEffect: "scale-110",
-  },
-  {
     name: "Languages",
     icon: Code,
     component: LanguagesWindow,
     hoverEffect: "scale-110 rotate-3",
+  },
+  {
+    name: "Experience",
+    icon: BriefcaseBusiness,
+    component: ExperienceWindow,
+    hoverEffect: "scale-110",
   },
   {
     name: "Education",
@@ -45,7 +47,12 @@ export const dockApps = [
     component: EducationWindow,
     hoverEffect: "scale-110 -rotate-3",
   },
-
+  {
+    name: "Blog",
+    icon: BookOpen,
+    component: BlogWindow,
+    hoverEffect: "scale-110",
+  },
   {
     name: "Contact",
     icon: Mail,
