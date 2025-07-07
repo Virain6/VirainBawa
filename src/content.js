@@ -95,7 +95,7 @@ export const aboutContent = {
     "Full-Stack Developer",
     "Problem Solver",
   ],
-  location: "Brampton Ontario, Canada",
+  location: "Ontario, Canada",
   phone: "(416) 708 8472",
   email: "bawavirain@gmail.com",
   resume: "/files/virain_resume.pdf",
