@@ -1,25 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import WindowContainer from "../components/WindowContainer";
+import { educationData } from "../data/education";
+import MapView from "../components/Education/MapView";
+import InfoPanel from "../components/Education/InfoPanel";
 
 export default function EducationWindow({ onClose, onClick, index }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleNext = () => {
+    setActiveIndex((prev) =>
+      prev < educationData.length - 1 ? prev + 1 : prev
+    );
+  };
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  };
+
+  const handleMarkerClick = (index) => {
+    setActiveIndex(index);
+  };
   return (
     <WindowContainer
       title="Education"
       onClose={onClose}
       onClick={onClick}
       index={index}
+      width={1200}
+      height={600}
     >
-      <div
-        className="
-          flex flex-col h-full
-          bg-gradient-to-b from-green-600 to-green-800
-          text-white
-          shadow-2xl overflow-hidden
-        "
-        onMouseDown={onClick}
-      >
-        {/* Content */}
-        <div className="flex-1 p-4 overflow-auto text-sm">Coming soon</div>
+      <div className="relative w-full h-full">
+        <MapView
+          steps={educationData}
+          activeIndex={activeIndex}
+          onMarkerClick={handleMarkerClick}
+        />
+        <InfoPanel
+          step={educationData[activeIndex]}
+          onNext={handleNext}
+          onPrev={handlePrev}
+          isFirst={activeIndex === 0}
+          isLast={activeIndex === educationData.length - 1}
+        />
       </div>
     </WindowContainer>
   );
