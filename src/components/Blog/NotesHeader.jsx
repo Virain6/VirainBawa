@@ -1,7 +1,20 @@
 import React from "react";
 import { Download, Plus, Minus } from "lucide-react";
 
-export default function NotesHeader({ fontSize, setFontSize }) {
+export default function NotesHeader({ fontSize, setFontSize, note }) {
+  const handleDownload = () => {
+    if (!note) return;
+
+    const blob = new Blob([note.content || "No content"], {
+      type: "text/markdown;charset=utf-8",
+    });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `${note.title || "note"}.md`;
+    link.click();
+    URL.revokeObjectURL(link.href); // Clean up
+  };
+
   return (
     <div className="flex items-center justify-between bg-neutral-800 p-2 border-b border-neutral-700">
       <div className="flex items-center space-x-2">
@@ -20,7 +33,7 @@ export default function NotesHeader({ fontSize, setFontSize }) {
         </button>
       </div>
       <button
-        onClick={() => alert("Download not implemented yet")}
+        onClick={handleDownload}
         className="p-1 rounded bg-neutral-700 hover:bg-neutral-600"
       >
         <Download className="w-4 h-4" />

@@ -23,7 +23,7 @@ export default function InfoPanel({ step, onNext, onPrev }) {
     <div
       className="
         absolute top-4 right-4 z-[1000]
-        bg-[#2c2c2e]/60 backdrop-blur-sm shadow-xl rounded-xl
+        bg-[#2c2c2e]/60 backdrop-blur-lg shadow-xl rounded-xl
         p-4 w-80 flex flex-col space-y-4 text-white 
       "
       onClick={() => setShowDetails(!showDetails)}

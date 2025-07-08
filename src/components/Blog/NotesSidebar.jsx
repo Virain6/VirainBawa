@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Star } from "lucide-react";
 
 export default function NotesSidebar({ notes, onSelect, selectedId }) {
   const [search, setSearch] = useState("");
@@ -12,7 +13,7 @@ export default function NotesSidebar({ notes, onSelect, selectedId }) {
     });
 
   return (
-    <aside className="w-72 bg-neutral-900 text-white p-4 border-r border-neutral-700">
+    <aside className="w-full sm:w-72 bg-neutral-900 text-white p-4 border-r border-neutral-700 overflow-y-auto">
       <input
         type="text"
         placeholder="Search..."
@@ -29,9 +30,9 @@ export default function NotesSidebar({ notes, onSelect, selectedId }) {
               selectedId === note.id ? "bg-neutral-700" : ""
             }`}
           >
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
               <h3 className="text-sm font-semibold">{note.title}</h3>
-              {note.favorite && <span>⭐</span>}
+              {note.favorite && <Star className="w-4 h-4 text-yellow-400" />}
             </div>
             <p className="text-xs text-neutral-400">{note.date}</p>
           </div>

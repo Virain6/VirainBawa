@@ -12,10 +12,8 @@ export default function MobileLayout() {
 
   const handleOpen = (app) => {
     if (app.name === "Home") {
-      // Close all apps when Home clicked
       setOpenApp(null);
     } else {
-      // Only one app open
       setOpenApp(app);
     }
   };
@@ -69,16 +67,6 @@ export default function MobileLayout() {
             onClose={handleClose}
             openApps={openApp ? [openApp] : []}
           />
-
-          {/* Open Window */}
-          {openApp && openApp.component && (
-            <openApp.component
-              key={openApp.name}
-              onClose={handleClose}
-              onClick={() => handleOpen(openApp)}
-              index={0}
-            />
-          )}
         </>
       )}
     </div>

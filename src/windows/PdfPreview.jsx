@@ -20,8 +20,12 @@ export default function PdfPreviewWindow({
     >
       <div className="flex flex-col h-full bg-neutral-900/60 backdrop-blur-md text-white">
         {/* PDF Preview */}
-        <div className="flex-1 overflow-hidden">
-          <iframe src={file} title={fileName} className="w-full h-full" />
+        <div className="flex-1 overflow-auto">
+          <iframe
+            src={file}
+            title={fileName}
+            className="w-full h-[80vh] sm:h-full"
+          />
         </div>
       </div>
     </WindowContainer>

@@ -1,13 +1,9 @@
 export const notesData = [
   {
-    id: "note-1",
-    title: "Content",
+    id: "Docker",
+    title: "Docker",
     date: "2025-06-25",
-    content: `
-# Content
-*Content is coming soon!*
-    `,
+    file: "/files/Blog/Docker.md",
     favorite: true,
   },
-  // more notes...
 ];

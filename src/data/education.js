@@ -6,10 +6,7 @@ export const educationData = [
     lat: 43.6532,
     lng: -79.3832,
     icon: "Home",
-    details: [
-      "Born and raised in the city.",
-      "Exposed early to diverse cultures and tech.",
-    ],
+    details: ["Exposed early to diverse cultures and tech."],
   },
   {
     id: 2,
@@ -30,12 +27,12 @@ export const educationData = [
     id: 3,
     title: "Western University",
     description:
-      "Bachelor Of Engineering Science with a specialization in Software Engineering",
+      "Bachelor of Engineering Science with a specialization in Software Engineering",
     lat: 43.0096,
     lng: -81.2737,
     icon: "Briefcase",
     details: [
-      "Anticipated Graduation 2026.",
+      "Anticipated Graduation in April 2026.",
       "Relevant Courses: Data Structures and Algorithms, Database Management, Web Technologies, Computer Network Applications, Software Project and Process Management, Software Requirements and Analysis.",
       "Developed a strong foundation in software engineering principles.",
       "Strengethed my skills in problem-solving, coding, and software design.",
