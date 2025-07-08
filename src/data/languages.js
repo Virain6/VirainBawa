@@ -1,13 +1,8 @@
 export const languageSections = {
   "Front End": {
-    React: [
-      "budgeting-app",
-      "building-blocks",
-      "pomodoro-app",
-      "ai-prompts",
-      "nba-scouts",
-    ],
+    React: ["budgeting-app", "building-blocks", "pomodoro-app", "nba-scouts"],
     "React Native": ["medi-care"],
+    "Next.js": ["ai-prompts"],
   },
   "Back End": {
     Node: ["building-blocks", "my-spots"],
