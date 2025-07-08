@@ -89,7 +89,7 @@ docker run myDockerImage
 view running containers using:
 
 ```docker
-docler container ls
+docker container ls
 ```
 
 # How to set up advanced docker

@@ -1,5 +1,6 @@
 import React from "react";
 import WindowContainer from "../components/WindowContainer";
+import FinderView from "../components/Languages/FinderView";
 
 export default function LanguagesWindow({ onClose, onClick, index }) {
   return (
@@ -11,15 +12,17 @@ export default function LanguagesWindow({ onClose, onClick, index }) {
     >
       <div
         className="
-          flex flex-col h-full
-          bg-gradient-to-b from-green-600 to-green-800
-          text-white
-          shadow-2xl overflow-hidden
-        "
+      flex flex-col
+      h-[70vh]  
+      min-h-[500px] 
+      max-h-[90vh]  
+ bg-neutral-800
+      text-white shadow-2xl
+      overflow-hidden
+    "
         onMouseDown={onClick}
       >
-        {/* Content */}
-        <div className="flex-1 p-4 overflow-auto text-sm">Coming soon</div>
+        <FinderView />
       </div>
     </WindowContainer>
   );
