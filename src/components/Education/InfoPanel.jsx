@@ -77,7 +77,7 @@ export default function InfoPanel({ step, onNext, onPrev }) {
       </div>
       <div
         className={`
-    transition-all duration-300 transform origin-top
+    transition-all duration-500 transform origin-top
     ${
       showDetails
         ? "opacity-100 scale-100 max-h-64 mt-2 overflow-y-auto"
@@ -87,9 +87,9 @@ export default function InfoPanel({ step, onNext, onPrev }) {
       >
         {step.details?.map((detail, index) => (
           <>
-            <div className="w-full h-[1px] bg-gray-600 my-2"></div>
+            <div className="w-full h-[1px] bg-gray-700 my-2"></div>
 
-            <div className="text-sm text-gray-400 space-y-1">
+            <div className="text-sm text-gray-300 space-y-1">
               <p key={index} className="ml-4 list-disc">
                 {detail}
               </p>
