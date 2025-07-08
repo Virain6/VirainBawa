@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 export default function PreviewPanel({ content }) {
   if (typeof content === "object") {
     return (
-      <div className="flex-1 max-w-full min-w-[400px] p-4 bg-neutral-950 text-white overflow-auto space-y-4">
+      <div className="flex-1 max-w-full min-w-[400px] p-4 bg-neutral-900/50 text-white overflow-auto space-y-4">
         {content.image && (
           <img
             src={content.image}

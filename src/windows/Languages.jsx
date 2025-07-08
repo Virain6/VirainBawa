@@ -16,7 +16,8 @@ export default function LanguagesWindow({ onClose, onClick, index }) {
       h-[70vh]  
       min-h-[500px] 
       max-h-[90vh]  
- bg-neutral-800
+ bg-neutral-800/50
+ backdrop-blur-md
       text-white shadow-2xl
       overflow-hidden
     "
