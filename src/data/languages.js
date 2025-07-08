@@ -12,13 +12,12 @@ export const languageSections = {
   "Back End": {
     Node: ["building-blocks", "my-spots"],
     Cpp: ["guesteau"],
+    Embedded: ["electric-bike-arm"],
   },
   Database: {
     SQL: ["nba-scouts"],
-    MongoDB: ["my-spots"],
+    Firebase: ["my-spots"],
     YugabyteDB: ["guesteau", "medi-care"],
   },
-  Networking: {
-    Embedded: ["electric-bike-arm"],
-  },
+  Networking: {},
 };

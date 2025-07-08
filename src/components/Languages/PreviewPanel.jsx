@@ -24,6 +24,9 @@ export default function PreviewPanel({ content }) {
             {content.about}
           </ReactMarkdown>
         )}
+        <div className="w-full text-center text-neutral-500 text-sm">
+          <p>Look at projects application for more information</p>
+        </div>
       </div>
     );
   }
@@ -34,6 +37,9 @@ export default function PreviewPanel({ content }) {
       <ReactMarkdown className="prose prose-invert max-w-none">
         {content}
       </ReactMarkdown>
+      <div className="w-full text-center text-neutral-500 text-sm">
+        <p>Look at projects application for more information</p>
+      </div>
     </div>
   );
 }
