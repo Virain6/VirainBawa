@@ -315,7 +315,7 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED       STATUS       POR
 docker cp 2aa48186e613:/home/student/lab-work/Lab2 ~/Desktop
 ```
 
-# 🧠 TOPIC
+# 🧠TOPIC
 
 **Author:** [Virain Bawa](https://github.com/Virain6)
 **Date:** 2025-03-04 14:37

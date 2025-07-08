@@ -5,6 +5,7 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"; // you
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import remarkBreaks from "remark-breaks";
+import remarkToc from "remark-toc";
 
 export default function NotesContent({ note, fontSize }) {
   const [content, setContent] = useState("");
@@ -71,7 +72,7 @@ export default function NotesContent({ note, fontSize }) {
           <p className="text-sm text-center text-gray-500">Loading...</p>
         ) : (
           <ReactMarkdown
-            remarkPlugins={[remarkGfm, remarkBreaks]} // 👈 Add remarkBreaks here
+            remarkPlugins={[remarkGfm, remarkBreaks, remarkToc]} // 👈 Add remarkBreaks here
             rehypePlugins={[rehypeSlug]}
             components={{
               code({ node, inline, className, children, ...props }) {
