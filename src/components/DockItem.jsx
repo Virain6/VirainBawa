@@ -69,6 +69,7 @@ export default function DockItem({
     transition-all duration-300 ease-out
     group-hover:scale-125
     group-hover:-translate-y-7
+    ${isActive ? "-translate-y-3" : ""}
   `}
         >
           <Icon className="w-8 h-8 text-black" />
