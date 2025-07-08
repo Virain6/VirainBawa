@@ -6,6 +6,7 @@ export default function FinderColumn({
   finalLevel = false,
   columnIndex,
   setContent,
+  selectedKey,
 }) {
   if (!data || typeof data !== "object") return null;
   const entries = Object.entries(data);
@@ -40,7 +41,9 @@ export default function FinderColumn({
         : entries.map(([key, value]) => (
             <div
               key={key}
-              className="cursor-pointer hover:bg-neutral-800 p-2 rounded text-sm"
+              className={`cursor-pointer p-2 rounded text-sm ${
+                key === selectedKey ? "bg-neutral-800" : "hover:bg-neutral-800"
+              }`}
               onClick={() => onClick(key, columnIndex)}
             >
               {key}

@@ -52,6 +52,7 @@ export default function FinderView() {
             data={languageSections}
             onClick={navigateTo}
             columnIndex={0}
+            selectedKey={path[0]}
           />
 
           {path.map((_, i) => {
@@ -70,6 +71,7 @@ export default function FinderView() {
                 columnIndex={i + 1}
                 finalLevel={isFinalLevelArray}
                 setContent={setSelectedContent}
+                selectedKey={path[i + 1]}
               />
             );
           })}
