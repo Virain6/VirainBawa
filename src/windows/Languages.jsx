@@ -9,6 +9,8 @@ export default function LanguagesWindow({ onClose, onClick, index }) {
       onClose={onClose}
       onClick={onClick}
       index={index}
+      width={1200}
+      height={500}
     >
       <div
         className="
