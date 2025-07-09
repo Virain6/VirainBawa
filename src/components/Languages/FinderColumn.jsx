@@ -14,7 +14,7 @@ export default function FinderColumn({
   return (
     <div
       className={`border-r border-neutral-700 bg-neutral-900/50  text-white p-2 flex-shrink-0 ${
-        finalLevel ? "w-[min(300px,100%)] min-w-[200px]" : "w-[200px]"
+        finalLevel ? "w-[min(300px,100%)] min-w-[175px]" : "w-[175px]"
       }`}
     >
       {finalLevel && Array.isArray(data)

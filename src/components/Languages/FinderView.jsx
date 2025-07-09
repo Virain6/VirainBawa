@@ -50,7 +50,7 @@ export default function FinderView() {
       />
       <div className="flex flex-1 h-full w-full">
         {/* Fixed left sidebar */}
-        <div className="w-[150px] bg-neutral-800 text-white border-r border-neutral-700 p-2 flex-shrink-0">
+        <div className="w-[200px] bg-neutral-800 text-white border-r border-neutral-700 p-2 flex-shrink-0">
           {Object.keys(finderSections).map((section) => (
             <div
               key={section}
