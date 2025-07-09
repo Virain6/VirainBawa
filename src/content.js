@@ -5,6 +5,7 @@ import ContactWindow from "./windows/Contact";
 import LanguagesWindow from "./windows/Languages";
 import EducationWindow from "./windows/Education";
 import ExperienceWindow from "./windows/Experience";
+import CommandLineWindow from "./windows/CommandLine";
 import {
   User,
   FolderKanban,
@@ -14,6 +15,7 @@ import {
   Mail,
   Home,
   BriefcaseBusiness,
+  SquareTerminal,
 } from "lucide-react";
 
 export const dockApps = [
@@ -52,6 +54,12 @@ export const dockApps = [
     icon: BookOpen,
     component: BlogWindow,
     hoverEffect: "scale-110",
+  },
+  {
+    name: "Command Line",
+    icon: SquareTerminal,
+    component: CommandLineWindow,
+    hoverEffect: "scale-110 - rotate-3 ",
   },
   {
     name: "Contact",
