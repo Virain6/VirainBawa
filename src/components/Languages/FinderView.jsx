@@ -8,9 +8,7 @@ import PreviewPanel from "./PreviewPanel";
 export default function FinderView() {
   const [path, setPath] = useState([]);
   const [selectedContent, setSelectedContent] = useState(null);
-  const [selectedSection, setSelectedSection] = useState(
-    "Languages and Frameworks"
-  );
+  const [selectedSection, setSelectedSection] = useState("Development");
 
   const navigateTo = (key, columnIndex = path.length, content = null) => {
     const newPath = [...path.slice(0, columnIndex), key];
@@ -34,10 +32,10 @@ export default function FinderView() {
   const getLevelAt = (levelPath) => {
     let level = finderSections[selectedSection];
     for (const key of levelPath) {
-      if (typeof level[key] === "undefined") return null;
-      level = level[key];
+      if (!level?.children?.[key]) return null;
+      level = level.children[key];
     }
-    return level;
+    return level.children ?? level;
   };
 
   return (
@@ -56,8 +54,8 @@ export default function FinderView() {
               key={section}
               className={`cursor-pointer p-2 rounded text-sm ${
                 section === selectedSection
-                  ? "bg-neutral-800"
-                  : "hover:bg-neutral-800"
+                  ? "bg-neutral-700"
+                  : "hover:bg-neutral-900"
               }`}
               onClick={() => {
                 setSelectedSection(section);
@@ -74,7 +72,7 @@ export default function FinderView() {
         <div className="flex-1 overflow-x-auto">
           <div className="flex w-fit h-full">
             <FinderColumn
-              data={finderSections[selectedSection]}
+              data={finderSections[selectedSection].children}
               onClick={navigateTo}
               columnIndex={0}
               selectedKey={path[0]}
@@ -101,7 +99,9 @@ export default function FinderView() {
               );
             })}
 
-            {selectedContent && <PreviewPanel content={selectedContent} />}
+            {selectedContent?.about && (
+              <PreviewPanel content={selectedContent} />
+            )}
           </div>
         </div>
       </div>

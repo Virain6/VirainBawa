@@ -20,7 +20,6 @@ export default function ExperienceWindow({ onClose, onClick, index }) {
       >
         <div className="flex-1 p-4 overflow-auto text-sm">Coming soon</div>
       </div>
-      ,/{" "}
     </WindowContainer>
   );
 }
