@@ -4,6 +4,7 @@ import StartupAnimation from "../components/StartupAnimation";
 import Dock from "../components/Desktop/Dock";
 import BackgroundSketch from "../components/BackDrop";
 import { dockApps } from "../content";
+import Overlay from "../components/Overlay";
 
 export default function DesktopLayout() {
   const [dockVisible, setDockVisible] = useState(false);
@@ -46,6 +47,7 @@ export default function DesktopLayout() {
   `}
       >
         <MenuBar dockApps={dockApps} onOpen={handleOpen} />
+        <Overlay />
       </div>
 
       {!dockVisible && (
