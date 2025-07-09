@@ -1,6 +1,11 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function FinderHeader({ path, onBack, onNavigateToLevel }) {
+export default function FinderHeader({
+  path,
+  onBack,
+  onNavigateToLevel,
+  selectedSection,
+}) {
   return (
     <div className="flex items-center gap-2 px-4 py-2 bg-neutral-800 border-b border-neutral-700 text-white text-sm">
       {/* Back button */}
@@ -10,7 +15,7 @@ export default function FinderHeader({ path, onBack, onNavigateToLevel }) {
         </button>
       )}
 
-      <span className="font-medium">Virain</span>
+      <span className="font-medium">{selectedSection}</span>
 
       {/* Path breadcrumbs */}
       {path.map((segment, index) => (
