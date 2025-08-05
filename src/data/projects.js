@@ -2,6 +2,31 @@ import { User } from "lucide-react";
 
 export const projectData = [
   {
+    id: "symptom-cms",
+    title: "Symptom Stream CMS/CRM Platform",
+    description:
+      "Internal content and relationship management platform for announcements, outreach, and company-wide task coordination.",
+    about: `The Symptom Stream CMS/CRM is a role-based internal platform designed to streamline operational communication, user engagement, and task coordination across our startup. Built from the ground up using Next.js, Tailwind CSS, and Convex, the system supports company-wide announcements, outreach, task assignment for individuals or groups, blog publishing, user analytics, and access-controlled user roles.
+
+After implementation, the platform led to measurable improvements in internal operations. Communication between interns and staff doubled, as calculated by weekly interaction metrics. Task completion rates increased significantly due to integrated email reminders and clear workflows. Admin engagement rose, with team leads spending more time collaborating through shared dashboards and messaging features. We also observed a 50% estimated increase in stakeholder retention, based on engagement tracking and feedback cycles.
+
+This CMS has become a foundational part of our internal infrastructure, helping Symptom Stream grow more organized, responsive, and connected as we scale.`,
+    image: "/images/projects/ss-dash.png", // Replace with the actual path when ready
+    progress: 100,
+    tech: ["Next.js", "Tailwind CSS", "Convex", "TypeScript", "Zod", "ShadCN"],
+    features: [
+      "Company-wide announcements with markdown editor",
+      "Task management system for individuals and groups",
+      "Internal blog platform with author tracking",
+      "Outreach modules for targeted communications",
+      "Real-time user analytics dashboard",
+      "Role-based access control with Convex authentication",
+      "Modular structure for future integrations",
+    ],
+    github: "https://github.com/symptomstream/employee-portal",
+    url: "https://staff.symptomstream.com",
+  },
+  {
     id: "medi-care",
     title: "MediCare Healthcare Camp App",
     description:
