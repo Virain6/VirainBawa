@@ -27,6 +27,42 @@ This CMS has become a foundational part of our internal infrastructure, helping 
     url: "https://staff.symptomstream.com",
   },
   {
+    id: "moneyExpoApp",
+    title: "Money Man",
+    description:
+      "Mobile first expense tracker that blends bank synced transactions with manual entries, designed so each person keeps a private, device centric view of their money.",
+    about: `The Personal Finance Companion App is a mobile app built with Expo and React Native that helps users understand day to day spending without feeling like a full enterprise accounting tool. The design focuses on clarity, fast entry, and a calm interface that makes it easy to see where money is going at a glance.
+
+The core of the app runs on a local SQLite database. Every transaction, budget, and category is stored on device first, which means the app feels fast, works even without a network connection, and keeps the users information close to them. When the user taps the sync control, the app connects to a secure backend, pulls in new bank transactions, and merges them into the local store. Existing transactions are matched by stable identifiers so duplicates are ignored while new items are added. Manually created records stay intact, so people can keep their own notes, cash spending, and adjustments on top of the bank feed.
+
+Security and privacy are treated as first class requirements rather than afterthoughts. Sensitive values such as access tokens and any keys that can reach banking data are stored using the platform secure storage through Expo SecureStore, which relies on the operating system keychain on iOS and the secure system store on Android. No raw credentials are stored in plain text inside the SQLite database. All communication with the backend is designed to use modern TLS over HTTPS, so data in transit is protected from basic interception. The sync flow is token based, so the server can validate a device without the user needing a heavy sign in system for casual personal use. The goal is to keep each app instance solo for the owner while still allowing multiple friends to install their own copy and safely connect to their own accounts.
+
+On the architecture side, the app uses a clear separation between presentation and data. A central state layer coordinates the SQLite queries, derived views, and computed summaries such as category totals, monthly spend, or upcoming bills. The UI layer uses reusable components for lists, cards, and modals, which makes it easier to add new surfaces such as future budget views or insights without rewriting core logic. This structure also supports a future path toward more advanced analytics and a richer sync story if the backend grows.
+
+Overall, the project combines a pragmatic local data model, careful storage of sensitive information, and a clean mobile interface to create a finance tool that feels trustworthy, practical, and easy to live with every day.`,
+    image: "",
+    progress: 70,
+    tech: [
+      "Expo",
+      "React Native",
+      "TypeScript",
+      "Expo SQLite",
+      "Expo SecureStore",
+      "React Navigation",
+    ],
+    features: [
+      "Local device storage of transactions using SQLite",
+      "Optional secure sync of bank transactions with merge into local data",
+      "Support for both synced and manually entered expenses",
+      "Category based summaries and monthly spending views",
+      "Token based communication with backend services",
+      "Use of platform secure storage for sensitive values",
+      "Offline friendly experience with on demand sync",
+    ],
+    github: "https://github.com/Virain6/money-management",
+    url: "",
+  },
+  {
     id: "medi-care",
     title: "MediCare Healthcare Camp App",
     description:
