@@ -47,7 +47,7 @@ export const finderSections = {
           },
           "React Native": {
             icon: AppWindow,
-            children: ["medi-care"],
+            children: ["medi-care", "moneyExpoApp"],
           },
           "Next.js": {
             icon: Server,
