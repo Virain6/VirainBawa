@@ -10,7 +10,7 @@ export const notesData = [
     id: "Expo",
     title: "Expo (React Native) + Nativewind",
     date: "2025-11-11",
-    file: "/files/Blog/Expo (React Native) + Nativewind.md",
+    file: "/files/Blog/Expo-(ReactNative)+Nativewind.md",
     favorite: true,
   },
 ];
