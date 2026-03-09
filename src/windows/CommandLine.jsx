@@ -27,6 +27,7 @@ export default function CommandLineWindow({ onClose, onClick, index }) {
       usage: "help",
       run: () => {
         return Object.keys(commands)
+          .sort((a, b) => a.localeCompare(b))
           .map((cmd) => `${cmd} — ${commands[cmd].description}`)
           .join("\n");
       },
@@ -91,6 +92,7 @@ export default function CommandLineWindow({ onClose, onClick, index }) {
           rounded-b-xl font-mono p-3 overflow-auto
         "
       >
+        <p>Type "help" for all prompts</p>
         <pre className="whitespace-pre-wrap leading-6">
           {history.map((entry, i) => (
             <div
